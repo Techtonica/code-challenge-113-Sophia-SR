@@ -28,21 +28,35 @@
 // ```
 
 //_**Note: in the above example, numbers array should remain unchanged after being used by your function.**_
+let numArr = [3, 4, 12, 14, 16]
 
-function betterFilter("add 2 arguments here") {
-  // and use them here
-}
+function betterFilter(arr,func) {
+	let filtBasket = []
+for (let i = 0; i < arr.length; i++){
+	  if (func(arr[i]) == true){
+		  filtBasket.push(arr[i])
+		}
+ }return filtBasket;
+		}
 
-function onlyEvens(n) {
-  if (n % 2 == 0) {
-    return true;
-  } else {
-    return false;
-  }
-}
+function modFour(num){
+	if (num % 4 == 0){
+		return true; 
+	} else {
+		return false;
+	}
+	}
+ 
+// function onlyEvens(n) {
+//   if (n % 2 == 0) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
 
-numbers = [1,2,3,4,5] //example
+// numbers = [1,2,3,4,5] //example
 
-betterFilter(numbers, onlyEvens);  //example use of your betterFilter fn
-
+// betterFilter(numbers, onlyEvens);  //example use of your betterFilter fn
+betterFilter(numArr, modFour);
 module.exports = betterFilter;
